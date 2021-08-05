@@ -81,8 +81,8 @@ function watching(){
     watch(['css/style.css'],styles);
     // watch(['js/**/*.js'], scripts);
    watch(['js**/*.js','!js/main.min.js'], scripts);
-
     watch(['**/*.html',]).on('change', sync.reload);
+    
 }
 
 exports.styles = styles;
