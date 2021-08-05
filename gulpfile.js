@@ -27,7 +27,7 @@ function styles(){
 function browser(){
   sync.init({
     server:{
-      baseDir:'./'
+      baseDir:'app/'
     },
     notify: false
   })
