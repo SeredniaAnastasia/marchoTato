@@ -2,7 +2,10 @@
 body {
     color: $default;
     font-size: 16px;
+    line-height: 26px;
     @extend %quicksand-500;
+    min-height: 100vh;
+    height: 100%;
 }
 
 .container {
@@ -11,4 +14,10 @@ body {
     padding: 0 15px;
 }
 
+a {
+    font-size: 16px;
+    line-height: 26px;
+    color: $default;
+    @extend %quicksand-500;
+}
 
