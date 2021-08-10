@@ -115,22 +115,86 @@
     &__address,
     &__email,
     &__phone {
-        line-height: 36px;
+        margin-bottom: 14px;
         display: block
     }
 
     &__social-list {
         display: flex;
         margin-top: 30px;
+        align-items: center;
     }
-    &__social-item + .footer-top__social-item {
+
+    &__social-item+.footer-top__social-item {
         padding-left: 18px;
     }
 
+    &__social-link {
+        transition: color 0.8s;
+
+        path {
+            fill: $default;
+        }
+
+        &:hover {
+            path {
+                fill: $accent;
+            }
+        }
+    }
+
     &__title {
-        margin-bottom: 40px;
+        color: $title;
+        @extend %roboto-400;
+        font-size: 22px;
+        line-height: 1px;
+        margin-bottom: 43px;
+    }
+
+    &__link {
+        margin-bottom: 14px;
+        display: block;
+    }
+
+    &__text {
+        margin-bottom: 25px;
+    }
+    &__form-input {
+        background-color: #ffffff;
+        max-width: 320px;
+        width: 100%;
+        border: transparent;
+        padding: 15px 10px 12px 15px;
+        box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, .3);
+        outline: transparent;
+        &::placeholder {
+            color:$default;
+            font-size: 16px;
+        }
+    }
+    &__form-btn {
+        border: transparent;
+        background-color: $accent;
+        color: #ffffff;
+        padding: 12px 26px;
+        text-transform: uppercase;
+        box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, .3);
+        cursor: pointer;
     }
 }
 
+.footer-bottom {
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+  
+    &__accept-img {
+        display: inline;
+        margin-left: 25px;
+        vertical-align: middle;
+    }
+}
 
 @import'media';
