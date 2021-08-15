@@ -11,7 +11,7 @@ const  del  = require('del');
 const sync = require('browser-sync').create();
 
 function styles(){
-    return src('app/scss/**/*.scss')
+    return src('app/scss/style.scss')
    .pipe(sass ({outputStyle:"expanded"}).on('error', sass.logError))
    .pipe(concat('style.min.css'))
    .pipe(autoprefixer({
@@ -34,12 +34,13 @@ function browser(){
 function scripts(){
   return src(
     [
-     // 'node_modules/jquery/dist/jquery.js',
-      'js/**/*.js'
+      'node_modules/jquery/dist/jquery.js',
+      'node_modules/slick-carousel/slick/slick.js',
+      'app/js/main.js'
     ])  
      .pipe(concat('main.min.js'))
     //.pipe(uglify()) // мініиізує файл
-     .pipe(dest('js'))
+     .pipe(dest('app/js'))
      .pipe(sync.stream())
 }
  
@@ -74,12 +75,12 @@ function cleanDist(){
 
 function watching(){
    watch(['app/scss/**/*.scss'],styles);
-   //watch(['app/js**/*.js','!app/js/main.min.js'], scripts);
-   //watch(['app/**/*.html',]).on('change', sync.reload);
-    watch(['css/style.css'],styles);
+   watch(['app/js/**/*.js','!app/js/main.min.js'], scripts);
+   watch(['app/**/*.html',]).on('change', sync.reload);
+   // watch(['css/style.css'],styles);
     // watch(['js/**/*.js'], scripts);
-   watch(['js**/*.js','!js/main.min.js'], scripts);
-    watch(['**/*.html',]).on('change', sync.reload);
+   //watch(['js**/*.js','!js/main.min.js'], scripts);
+   // watch(['**/*.html',]).on('change', sync.reload);
 }
 
 exports.styles = styles;
@@ -89,6 +90,6 @@ exports.watching = watching;
 exports.images = images;
 exports.build = series(cleanDist, images, build);
 exports.cleanDist = cleanDist;
-//exports.default = parallel(styles, scripts, browser, watching);
+exports.default = parallel(styles, scripts, browser, watching);
 
-exports.default = parallel(browser, watching);
+//exports.default = parallel(browser, watching);
