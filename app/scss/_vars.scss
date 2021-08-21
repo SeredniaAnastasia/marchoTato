@@ -31,3 +31,10 @@ $bg: #f6f6f6;
     @extend %roboto-400;
     box-shadow: 0px 7px 20px 0px rgba(192, 192, 192, .3);
 }
+
+@function max($numbers...){
+  @return m#{a}x(#{$numbers});
+}
+@function min($numbers...){
+  @return m#{i}n(#{$numbers});
+}
