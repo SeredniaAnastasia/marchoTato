@@ -6,4 +6,14 @@ $(function(){
         autoplay:true,
         autoplaySpeed:2000
     });
+
+    $(".star").rateYo({
+        starWidth: "17px",
+        normaFill: "#ccccce",
+        ratedFill: "#ffc35b",
+        numStars: 10,
+        readOnly: true
+    });
+
+
 });
