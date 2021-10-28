@@ -14,6 +14,7 @@
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-imagemin": "^7.1.0",
+    "mixitup": "^3.3.1",
     "rateyo": "^2.3.2",
     "slick-carousel": "^1.8.1"
   },
