@@ -87,12 +87,79 @@ a {
     &__link {
         color: inherit;
     }
-   
 }
 
 .header--404-page {
     background-color:$bg;
 }
+
+
+.filter {
+    &__item {
+        padding: 35px 30px 40px;
+        border: 1px solid #ececec;
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        color: $title;
+        font-size: 22px;
+        @extend %roboto-400;
+        margin-bottom: 25px;
+    }
+
+}
+
+// -------------PGINATION-------------------
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    &__list {
+        display: flex;
+        padding: 0 35px;
+
+    }
+    &__item {
+        padding: 0 15px;
+    }
+    &__link--active {
+        color: $accent;
+    }
+
+    &__arrow {
+        text-transform: uppercase;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 10px;
+            top: 8px;
+
+            }
+         }
+
+        &__prev {
+            padding-left: 15px;
+            &::before {
+                background-image: url('../images/icons/arrow_left.svg');
+                left: 0;
+            }
+        }
+
+        &__next {
+            padding-right: 15px;
+            &::before {
+                background-image: url('../images/icons/arrow_right.svg');
+                right: 0;
+            }
+    }
+}
+
+
 
 
 
