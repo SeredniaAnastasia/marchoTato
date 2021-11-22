@@ -85,7 +85,58 @@
         </div>
       </div>
     </section>
-  </main>
+
+
+
+
+  <section class="map">
+    <div class="container">
+      <div id="map">ssdfvbrtgsfg</div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__info">
+          <h3 class="contact__info-title">Feel Free Don't Hesitate To Contact With Us</h3>
+          <p class="contact__info-text">Lorem ipsum dolor sit amet, consectetur adingn elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Quis ipsum suspendisse ultrices gravida. 
+            Risus commodo maecnaacnrao cumsan lacus vel facilisis. </p>
+            <ul class="contact__info-list">
+              <li class="contact__info-item">
+                <a  class="contact__info-phone" href="tel:+0123456789">+0-123-456-7896</a>
+                <a  class="contact__info-phone" href="tel:+0123456789">+0-123-456-7896</a>
+              </li>
+              <li class="contact__info-item contact__info-item--location">
+                Ranlon Market 789 Road, <br>
+                Market Street, Newyork
+              </li>
+              <li class="contact__info-item contact__info-item--email">
+                <div>
+                  yourmailaddress@gmail.com
+                </div>
+                <div>
+                  companymail@gmail.com
+                </div>
+              </li>
+            </ul>
+        </div>
+          <form action="" class="contact__form">
+            <p class="contact__form-title">Contact Form</p>
+            <div class="contact__form-box">
+              <input class="contact__form-input" type="text" placeholder="Your Name">
+              <input class="contact__form-input" type="text" placeholder="Your E-mail Address">
+            </div>
+              <input class="contact__form-input" type="text" placeholder="Subject">
+              <textarea class="contact__form-textarea" name="" id="" cols="30" rows="10" placeholder="Message here"></textarea>
+              <button class="contact__form-btn" type="submit">send message</button>
+          </form>
+      </div>
+    </div>
+  </section>
+</main>
 
   <footer class="footer">
     <div class="container">
@@ -239,10 +290,195 @@
       </div>
     </div>
   </footer>
+  
+  <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&v=weekly"  async></script>
 
 
 
   <script src="js/main.min.js"></script>
+  <script>
+  // --------------MAP--------------
+  let map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 49.398566674128894, lng: 23.524801031291897 },
+      zoom: 10,
+      styles: 
+      [
+    {
+        "featureType": "all",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "weight": "2.00"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#9c9c9c"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f2f2f2"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.man_made",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#eeeeee"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#7b7b7b"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#46bcec"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#c8d7d4"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#070707"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    }
+]
+      
+    });
+  }
+  // --------------MAP--------------
+  </script>
 </body>
 
 </html>
